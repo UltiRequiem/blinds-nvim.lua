@@ -21,9 +21,9 @@ augroup END
 ]]
 
 local function setup()
-  vim.api.nvim_eval(blinds_guibg)
-  vim.api.nvim_eval(set_blinds)
-  vim.api.nvim_eval(autogroup)
+  vim.api.nvim_exec(blinds_guibg)
+  vim.api.nvim_exec(set_blinds)
+  vim.api.nvim_exec(autogroup)
 end
 
 return {setup = setup}
