@@ -1,17 +1,12 @@
-local blinds_guibg = [[
+local plugin = [[
 if !exists("g:blinds_guibg")
     let g:blinds_guibg = "#969694"
 endif
-]]
 
-local set_blinds = ([[
 function! s:SetBlinds()
     exec "hi Blinds guibg=".g:blinds_guibg
 endfun
-]])
 
-local autogroup =
-    [[
 augroup blinds
     au!
     au WinEnter,BufWinEnter * setlocal winhighlight=
@@ -21,9 +16,7 @@ augroup END
 ]]
 
 local function setup()
-  vim.api.nvim_exec(blinds_guibg)
-  vim.api.nvim_exec(set_blinds)
-  vim.api.nvim_exec(autogroup)
+  vim.api.nvim_exec(plugin)
 end
 
 return {setup = setup}
