@@ -5,5 +5,3 @@ endif
 let g:loaded_blinds= 1
 
 lua require'blinds'.setup()
-
-call s:SetBlinds()

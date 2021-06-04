@@ -1,4 +1,9 @@
 local plugin = [[
+if (exists("g:loaded_blinds") && g:loaded_blinds) || &cp
+    finish
+endif
+let g:loaded_blinds= 1
+
 if !exists("g:blinds_guibg")
     let g:blinds_guibg = "#969694"
 endif
@@ -13,6 +18,12 @@ augroup blinds
     au WinLeave * if &bl == 1 | setlocal winhighlight=ColorColumn:Blinds,CursorColumn:Blinds,CursorLine:Blinds,EndOfBuffer:Blinds,LineNr:Blinds,NonText:Blinds,Normal:Blinds,FoldColumn:Blinds,SignColumn:Blinds,VertSplit:Blinds,Whitespace:Blinds | endif
     au ColorScheme * call s:SetBlinds()
 augroup END
+
+if (exists("g:loaded_blinds") && g:loaded_blinds) || &cp
+    finish
+endif
+let g:loaded_blinds= 1
+
 ]]
 
 local function setup()
