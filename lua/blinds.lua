@@ -1,7 +1,8 @@
-vim.g.blinds_guibg = "#969694"
-
 local function setup()
   vim.api.nvim_command([[
+  if !exists("g:blinds_guibg")
+    let g:blinds_guibg = "#969694"
+  endif
  function! s:SetBlinds()
     exec "hi Blinds guibg=".g:blinds_guibg
   endfun
