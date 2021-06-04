@@ -1,0 +1,1 @@
+# blinds-nvim.lua
