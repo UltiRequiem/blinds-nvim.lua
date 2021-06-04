@@ -1,7 +1,11 @@
 vim.g.blinds_guibg = "#969694"
 
 local function setup()
-  vim.api.nvim_command("hi Blinds guibg=" .. vim.g.blinds_guibg)
+  vim.api.nvim_command([[
+  function! s:SetBlinds()
+    exec "hi Blinds guibg=".g:blinds_guibg
+  endfun
+  ]])
   vim.api.nvim_command([[
   augroup blinds
     au!
