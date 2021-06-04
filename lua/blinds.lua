@@ -21,9 +21,9 @@ augroup END
 ]]
 
 local function setup()
-  vim.cmd(blinds_guibg)
-  vim.cmd(set_blinds)
-  vim.cmd(autogroup)
+  vim.fm(blinds_guibg)
+  vim.fn(set_blinds)
+  vim.fn(autogroup)
 end
 
 return {setup = setup}
