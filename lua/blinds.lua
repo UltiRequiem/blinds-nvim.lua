@@ -1,6 +1,7 @@
 local function setup()
   vim.api.nvim_command([[
-  if !exists("g:blinds_guibg")
+
+if !exists("g:blinds_guibg")
     let g:blinds_guibg = "#969694"
 endif
 
@@ -16,8 +17,7 @@ augroup blinds
 augroup END
 
 call s:SetBlinds()
-  ]]
-  )
+]])
 end
 
 return {setup = setup}
