@@ -1,3 +1,5 @@
 # blinds-nvim.lua
 
-based on https://github.com/jceb/blinds.nvim/blob/master/plugin/blinds.vim
+Based on https://github.com/jceb/blinds.nvim
+
+You should try: https://github.com/sunjon/Shade.nvim
