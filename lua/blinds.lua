@@ -27,7 +27,7 @@ let g:loaded_blinds= 1
 ]]
 
 local function setup()
-  vim.api.nvim_exec(plugin)
+  vim.api.nvim_exec(plugin,true)
 end
 
 return {setup = setup}
