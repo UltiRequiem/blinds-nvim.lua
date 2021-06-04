@@ -1,21 +1,17 @@
-vim.cmd(
-[[
+local blinds_guibg = [[
 if !exists("g:blinds_guibg")
     let g:blinds_guibg = "#969694"
 endif
 ]]
-)
 
-vim.cmd(
-[[
+local set_blinds = ([[
 function! s:SetBlinds()
     exec "hi Blinds guibg=".g:blinds_guibg
 endfun
-]]
-)
+]])
 
-vim.cmd(
-[[
+local autogroup =
+    [[
 augroup blinds
     au!
     au WinEnter,BufWinEnter * setlocal winhighlight=
@@ -23,4 +19,11 @@ augroup blinds
     au ColorScheme * call s:SetBlinds()
 augroup END
 ]]
-)
+
+local function setup()
+  vim.cmd(blinds_guibg)
+  vim.cmd(set_blinds)
+  vim.cmd(autogroup)
+end
+
+return {setup = setup}
